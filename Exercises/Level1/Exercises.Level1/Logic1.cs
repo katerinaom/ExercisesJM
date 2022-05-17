@@ -117,18 +117,23 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday) 
     {
+        // 1. If it is Birthday, than speed is lower for 5
         if (isBirthday)
         {
             speed -= 5;
         }
+        // 2. If speed is lower or the same with 60, than you will not have a ticket, return 0
         if (speed <= 60)
         {
             return 0;
         }
+        // 3. If speed is more or the same with 81,than ticket is big, return 2
         if (speed >= 81)
         {
             return 2;
         }
+        // In all other cases  speed is between 60 & 81
+        // return 1
         return 1;
 
 
@@ -146,7 +151,15 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        //1. We have two ints, so sum = a+b
+        int sum = a + b;
+        //2. If there is a number between 10 & 19, return 20
+        if (sum >= 10 && sum <= 19)
+        {
+            return 20;
+        }
+
+        return sum;
     }
 
     /// <summary>
@@ -162,7 +175,28 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        string early = "7:00";
+        string late = "10:00";
+        string off = "off";
+        if (day == 0 || day == 6)
+        {
+            if (vacation)
+            {
+                return off;
+            }
+
+            return late;
+        }
+
+       
+        if (vacation)
+        {
+            return late;
+        }
+
+        return early;
+
+
     }
 
     /// <summary>
@@ -176,7 +210,27 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        if (a == 6 || b == 6)
+        {
+            return true;
+        }
+
+        if (a + b == 6)
+        {
+            return true;
+        }
+
+        int subtracted = a - b;
+     
+        int diff = Math.Abs(subtracted);
+
+        if (diff == 6)
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
     /// <summary>
@@ -190,7 +244,10 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+         if(outsideMode)
+        return n <= 1 || 10 <= n;
+          
+    return 1 <= n && n <= 10;
     }
 
     /// <summary>
@@ -203,7 +260,7 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        return (n % 11 == 0 || n % 11 == 1);
     }
 
     /// <summary>
@@ -216,7 +273,7 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        return n != 0 && ((n - 1) % 20 == 0 || (n - 2) % 20 == 0);
     }
 
     /// <summary>
@@ -229,7 +286,7 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        return (n % 3 == 0 && n % 5 != 0) || (n % 3 != 0 && n % 5 == 0);
     }
 
     /// <summary>
