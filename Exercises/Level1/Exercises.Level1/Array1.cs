@@ -19,7 +19,7 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        return (nums[0] == 6 || nums[nums.Length - 1] == 6);
     }
 
     /// <summary>
@@ -32,7 +32,16 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        // 1. Ja masīvs ir īsāks par 1 tad atgriežam false
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+
+        // 2. Izgūstam pirmo un pēdējo elementu
+        // 3. Salidzinam vai elementi ir vienādi
+        return nums[0] == nums[nums.Length - 1];
+        
     }
 
     /// <summary>
@@ -42,7 +51,7 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        return new int[] { 3, 1, 4 };
     }
 
     /// <summary>
@@ -55,7 +64,12 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        // 1. Izgūstam abu masīvu pirmos elementos un salīdzīnam
+        // Ja ir vienādi, tad atgriežam vērtību true
+        // 2. Izgūstam abu masīvu pēdējos elementos un salīdzīnam
+        // Ja ir vienādi, tad atgriežam vērtību true
+        // 3. Citādi atgriežam vērtību false
+        return a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1];
     }
 
     /// <summary>
@@ -67,7 +81,16 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        // 1. Piedefinējam mainīgo, kurā glabāsīm summas vērtību
+        int sum = 0;
+        foreach (var item in nums)
+        {
+            // 2. Katrā interācijā pieskaitām sum mainīgajam katra elementa no masīva vērtibu
+            sum += item;
+        }
+
+            // 3. Atgriežam summas mainīgo
+            return sum;
     }
 
     /// <summary>
@@ -80,7 +103,11 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        // 1. Izveidojat jaunu masīvu un ieliekat vajadzīgajās vietas elementus
+        return new int[] { nums[1], nums[2], nums[0] };
+       
+        //2. Atrisiniet šo ar ciklu tādā veidā, ka nebūtu nozīme, cik elementi ir masīvā
+       
     }
 
     /// <summary>
@@ -93,7 +120,8 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] reversed = { nums[2], nums[1], nums[0] };
+        return reversed;
     }
 
     /// <summary>
@@ -120,7 +148,11 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length >= 2)
+            return (nums[0] + nums[1]);
+        if (nums.Length == 1)
+            return nums[0];
+        return 0;
     }
 
     /// <summary>
@@ -146,7 +178,8 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temp = { nums[0], nums[nums.Length - 1] };
+        return temp;
     }
 
     /// <summary>
@@ -158,7 +191,9 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3)
+            return true;
+        return (nums[1] == 2 || nums[1] == 3);
     }
 
     /// <summary>
@@ -170,7 +205,9 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3)
+            return false;
+        return !(nums[1] == 2 || nums[1] == 3);
     }
 
     /// <summary>
