@@ -134,7 +134,25 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        
+        int first = nums[0];
+
+        int last = nums[nums.Length - 1];
+
+        int biggest = first;
+
+        if (first < last)
+        {
+            biggest = last;
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = biggest;
+        }
+
+        return nums;
+
     }
 
     /// <summary>
@@ -221,7 +239,10 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
-        throw new NotImplementedException();
+        int len = nums.Length * 2;
+        int[] dubsArr = new int[len];
+        dubsArr[len - 1] = nums[nums.Length - 1];
+        return dubsArr;
     }
 
     /// <summary>
