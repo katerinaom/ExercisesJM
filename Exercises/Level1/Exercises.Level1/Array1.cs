@@ -183,7 +183,10 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[2];
+        temparray[0] = a[1];
+        temparray[1] = b[1];
+        return temparray;
     }
 
     /// <summary>
@@ -255,7 +258,23 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 2)
+        {
+            if (nums[0] == 2 && nums[1] == 2)
+            {
+                return true;
+            }
+            if (nums[0] == 3 && nums[1] == 3)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
@@ -268,7 +287,24 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[3];
+
+        for (int i = 0; i <= nums.Length - 1; i++)
+        {
+            temparray[i] = nums[i];
+        }
+
+        temparray = nums;
+        if (nums[0] == 2 && nums[1] == 3)
+        {
+            temparray[1] = 0;
+
+        }
+        if (nums[1] == 2 && nums[2] == 3)
+        {
+            temparray[2] = 0;
+        }
+        return temparray;
     }
 
     /// <summary>
@@ -281,7 +317,23 @@ public class Array1
     /// </summary>
     public int Start1(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int counter = 0;
+
+        if (a.Length >= 1)
+        {
+            if (a[0] == 1)
+            {
+                counter += 1;
+            }
+        }
+        if (b.Length >= 1)
+        {
+            if (b[0] == 1)
+            {
+                counter += 1;
+            }
+        }
+        return counter;
     }
 
     /// <summary>
@@ -294,7 +346,20 @@ public class Array1
     /// </summary>
     public int[] BiggerTwo(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int sum1 = 0;
+        int sum2 = 0;
+
+        sum1 = a[0] + a[1];
+        sum2 = b[0] + b[1];
+
+        if (sum1 >= sum2)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
     }
 
     /// <summary>
@@ -307,7 +372,16 @@ public class Array1
     /// </summary>
     public int[] MakeMiddle(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[2];
+        int arraylength = nums.Length;
+
+        if (arraylength >= 2)
+        {
+            int half = arraylength / 2;
+            temparray[0] = nums[half - 1];
+            temparray[1] = nums[half];
+        }
+        return temparray;
     }
 
     /// <summary>
@@ -320,7 +394,14 @@ public class Array1
     /// </summary>
     public int[] PlusTwo(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[4];
+
+        temparray[0] = a[0];
+        temparray[1] = a[1];
+        temparray[2] = b[0];
+        temparray[3] = b[1];
+
+        return temparray;
     }
 
     /// <summary>
@@ -333,7 +414,12 @@ public class Array1
     /// </summary>
     public int[] SwapEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        int arraylength = nums.Length;
+        int temp = 0;
+        temp = nums[0];
+        nums[0] = nums[arraylength - 1];
+        nums[arraylength - 1] = temp;
+        return nums;
     }
 
     /// <summary>
@@ -346,7 +432,17 @@ public class Array1
     /// </summary>
     public int[] MidThree(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[3];
+        int arraylength = nums.Length;
+
+        if (arraylength >= 3)
+        {
+            int half = arraylength / 2;
+            temparray[0] = nums[half - 1];
+            temparray[1] = nums[half];
+            temparray[2] = nums[half + 1];
+        }
+        return temparray;
     }
 
     /// <summary>
@@ -359,7 +455,12 @@ public class Array1
     /// </summary>
     public int MaxTriple(int[] nums)
     {
-        throw new NotImplementedException();
+        int maxnum = nums[0];
+        if (maxnum <= nums[nums.Length / 2])
+            maxnum = nums[nums.Length / 2];
+        if (maxnum <= nums[nums.Length - 1])
+            maxnum = nums[nums.Length - 1];
+        return maxnum;
     }
 
     /// <summary>
@@ -372,7 +473,14 @@ public class Array1
     /// </summary>
     public int[] FrontPiece(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[2];
+        if (nums.Length >= 2)
+        {
+            temparray[0] = nums[0];
+            temparray[1] = nums[1];
+            return temparray;
+        }
+        return nums;
     }
 
     /// <summary>
@@ -399,7 +507,25 @@ public class Array1
     /// </summary>
     public int[] Make2(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] temparray = new int[2];
+
+        if (a.Length >= 2)
+        {
+            temparray[0] = a[0];
+            temparray[1] = a[1];
+        }
+
+        if (a.Length == 1)
+        {
+            temparray[0] = a[0];
+            temparray[1] = b[0];
+        }
+        if (a.Length == 0)
+        {
+            temparray[0] = b[0];
+            temparray[1] = b[1];
+        }
+        return temparray;
     }
 
     /// <summary>
@@ -412,6 +538,26 @@ public class Array1
     /// </summary>
     public int[] Front11(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] temparray;
+        if (a.Length >= 1 && b.Length >= 1)
+        {
+            temparray = new int[2];
+            temparray[0] = a[0];
+            temparray[1] = b[0];
+        }
+        else if (a.Length >= 1 && b.Length == 0)
+        {
+            temparray = new int[1];
+            temparray[0] = a[0];
+        }
+        else if (a.Length == 0 && b.Length >= 1)
+        {
+            temparray = new int[1];
+            temparray[0] = b[0];
+        }
+        else
+            temparray = new int[0];
+
+        return temparray;
     }
 }
