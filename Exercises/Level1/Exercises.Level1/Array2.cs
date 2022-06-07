@@ -17,7 +17,17 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+        int count = 0;
+        foreach (int num in nums)
+        {
+            if (num % 2 == 0)
+            {
+                count++;
+            }
+        }
+
+        return count;
+
     }
 
     /// <summary>
