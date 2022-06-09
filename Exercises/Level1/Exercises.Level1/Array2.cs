@@ -292,7 +292,13 @@ public class Array2
     /// </summary>
     public string[] FizzArray2(int nums)
     {
-        throw new NotImplementedException();
+        string[] numsis = new string[nums];
+        for (int i = 0; i < nums; i++)
+        {
+            numsis[i] = i.ToString();
+        }
+        return numsis;
+
     }
 
     /// <summary>
@@ -304,7 +310,21 @@ public class Array2
     /// </summary>
     public bool No14(int[] nums)
     {
-        throw new NotImplementedException();
+        int count1 = 0;
+        int count4 = 0;
+        foreach (int num in nums)
+        {
+            if (num == 1)
+            {
+                count1++;
+            }
+            if (num == 4)
+            {
+                count4++;
+            }
+        }
+        return count1 == 0 || count4 == 0;
+
     }
 
     /// <summary>
@@ -318,7 +338,12 @@ public class Array2
     /// </summary>
     public bool IsEverywhere(int[] nums, int val)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (nums[i] != val && nums[i + 1] != val)
+                return false;
+        }
+        return true;
     }
 
     /// <summary>
@@ -331,7 +356,33 @@ public class Array2
     /// </summary>
     public bool Either24(int[] nums)
     {
-        throw new NotImplementedException();
+        int two = 0;
+        int four = 0;
+
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (nums[i] == 2 && nums[i + 1] == 2)
+            {
+                two++;
+            }
+            if (nums[i] == 4 && nums[i + 1] == 4)
+            {
+                four++;
+            }
+        }
+
+        if (two != 0 && four != 0)
+        {
+            return false;
+        }
+        else if (two != 0 || four != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
@@ -345,7 +396,14 @@ public class Array2
     /// </summary>
     public int MatchUp(int[] nums1, int[] nums2)
     {
-        throw new NotImplementedException();
+        int listA = 0;
+
+        for (int i = 0; i < nums1.Length; i++)
+        {
+            if (Math.Abs(nums1[i] - nums2[i]) <= 2 && nums1[i] != nums2[i]) listA += 1;
+        }
+
+        return listA;
     }
 
     /// <summary>
@@ -358,7 +416,12 @@ public class Array2
     /// </summary>
     public bool Has77(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if (nums[i] == 7 && (nums[i + 1] == 7 || nums[i + 2] == 7)) return true;
+            if (nums[i + 1] == 7 && nums[i + 2] == 7) return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -384,7 +447,13 @@ public class Array2
     /// </summary>
     public bool ModThree(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if ((nums[i] % 2 == 0 && nums[i + 1] % 2 == 0 && nums[i + 2] % 2 == 0)
+            || (nums[i] % 2 == 1 && nums[i + 1] % 2 == 1 && nums[i + 2] % 2 == 1))
+                return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -397,7 +466,21 @@ public class Array2
     /// </summary>
     public bool HaveThree(int[] nums)
     {
-        throw new NotImplementedException();
+        int count = 0;
+
+        if (nums.Length <= 1) return false;
+
+        if (nums[0] == 3 && nums[1] != 3) count++;
+        if (nums[nums.Length - 1] == 3 && nums[nums.Length - 2] != 3) count++;
+
+
+        for (int x = 1; x < nums.Length - 2; x++)
+        {
+            if (nums[x - 1] != 3 && nums[x] == 3 && nums[x + 1] != 3)
+                count++;
+        }
+
+        return (count == 3);
     }
 
     /// <summary>
@@ -423,7 +506,14 @@ public class Array2
     /// </summary>
     public bool SameEnds(int[] nums, int val)
     {
-        throw new NotImplementedException();
+        int count = 0;
+        if (val == 0) return true;
+        for (int i = 0; i < val; i++)
+        {
+            if (nums[i] == nums[nums.Length - val + i]) count++;
+        }
+        if (count == val) return true;
+        else return false;
     }
 
     /// <summary>
@@ -436,7 +526,14 @@ public class Array2
     /// </summary>
     public bool TripleUp(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if (nums[i] + 1 == nums[i + 1] && (nums[i + 1] + 1) == nums[i + 2])
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     /// <summary>
@@ -451,7 +548,13 @@ public class Array2
     /// </summary>
     public int[] FizzArray3(int start, int end)
     {
-        throw new NotImplementedException();
+        int[] arr = new int[end - start];
+        for (int i = start; i < end; i++)
+        {
+            //if (i==start)
+            arr[i - start] = i;
+        }
+        return arr;
     }
 
     /// <summary>
@@ -464,7 +567,24 @@ public class Array2
     /// </summary>
     public int[] ShiftLeft(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length <= 0)
+        {
+            return nums;
+        }
+
+        int[] array = new int[nums.Length];
+
+        int first = nums[0];
+
+        for (int i = 0, j = 1; j < nums.Length; i++, j++)
+        {
+
+            array[i] = nums[j];
+
+        }
+        array[array.Length - 1] = first;
+
+        return array;
     }
 
     /// <summary>
@@ -478,7 +598,18 @@ public class Array2
     /// </summary>
     public int[] TenRun(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (nums[i] % 10 == 0 && nums[i + 1] % 10 != 0)
+            {
+                nums[i + 1] = nums[i];
+            }
+            else if (nums[i] % 10 == 0 && nums[i + 1] % 10 == 0)
+            {
+                nums[i] = nums[i];
+            }
+        }
+        return nums;
     }
 
     /// <summary>
