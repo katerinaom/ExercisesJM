@@ -16,7 +16,15 @@ public class Warmup2
     /// </summary>
     public string StringTimes(string str, int n)
     {
-        throw new NotImplementedException();
+        if (n == 0)
+        {
+            return "";
+        }
+        if (n > 1)
+        {
+            return str + StringTimes(str, n - 1);
+        }
+        return str;
     }
 
     /// <summary>
@@ -53,7 +61,11 @@ public class Warmup2
     /// </summary>
     public bool DoubleX(string str)
     {
-        throw new NotImplementedException();
+        if (str.IndexOf("x") < 0)
+        {
+            return false;
+        }
+        return str.Substring(str.IndexOf("x")).StartsWith("xx");
     }
 
     /// <summary>
