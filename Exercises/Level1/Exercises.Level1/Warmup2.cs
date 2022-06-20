@@ -37,7 +37,9 @@ public class Warmup2
     /// </summary>
     public string FrontTimes(string str, int n)
     {
-        throw new NotImplementedException();
+        if (n == 0) return "";
+        if (str.Length < 4) return str + FrontTimes(str, n - 1);
+        return FrontTimes(str.Substring(0, 3), n);
     }
 
     /// <summary>
@@ -49,7 +51,14 @@ public class Warmup2
     /// </summary>
     public int CountXx(string str)
     {
-        throw new NotImplementedException();
+        int count = 0;
+        char[] arr = str.ToCharArray();
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            if (arr[i] == 'x' && arr[i + 1] == 'x')
+                count++;
+        }
+        return count;
     }
 
     /// <summary>
@@ -101,7 +110,7 @@ public class Warmup2
     /// </summary>
     public int Last2(string str)
     {
-        throw new NotImplementedException();
+       throw new NotImplementedException();
     }
 
     /// <summary>
@@ -113,7 +122,15 @@ public class Warmup2
     /// </summary>
     public int ArrayCount9(int[] nums)
     {
-        throw new NotImplementedException();
+        int count = 0;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 9)
+                count++;
+        }
+
+        return count;
     }
 
     /// <summary>
@@ -126,7 +143,17 @@ public class Warmup2
     /// </summary>
     public bool ArrayFront9(int[] nums)
     {
-        throw new NotImplementedException();
+        int i = 0;
+
+        while (i < nums.Length && i < 4)
+        {
+            if (nums[i] == 9)
+                return true;
+
+            i++;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -138,7 +165,13 @@ public class Warmup2
     /// </summary>
     public bool Array123(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3)
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -200,7 +233,15 @@ public class Warmup2
     /// </summary>
     public int Array667(int[] nums)
     {
-        throw new NotImplementedException();
+        int count = 0;
+
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            if (nums[i] == 6 && (nums[i + 1] == 6 || nums[i + 1] == 7))
+                count++;
+        }
+
+        return count;
     }
 
     /// <summary>
@@ -212,7 +253,13 @@ public class Warmup2
     /// </summary>
     public bool NoTriples(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if (nums[i + 1] == nums[i] && nums[i + 2] == nums[i])
+                return false;
+        }
+
+        return true;
     }
 
     /// <summary>
@@ -224,7 +271,14 @@ public class Warmup2
     /// </summary>
     public bool Has271(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if ((nums[i + 1] == nums[i] + 5) &&
+                (Math.Abs(nums[i + 2] - (nums[i] - 1)) <= 2))
+                return true;
+        }
+
+        return false;
     }
 }
 
