@@ -18,7 +18,12 @@ public class Warmup1
     /// </summary>
     public bool SleepIn(bool weekday, bool vacation)
     {
-        throw new NotImplementedException();
+        if (!weekday || vacation)
+        {
+            return true;
+        }
+        return false;
+
     }
 
     /// <summary>
@@ -33,7 +38,12 @@ public class Warmup1
     /// </summary>
     public bool MonkeyTrouble(bool aSmile, bool bSmile)
     {
-        throw new NotImplementedException();
+        if (aSmile && bSmile || !aSmile && !bSmile)
+        {
+            return true;
+        }
+        return false;
+
     }
 
     /// <summary>
@@ -46,7 +56,7 @@ public class Warmup1
     /// </summary>
     public int SumDouble(int a, int b)
     {
-        throw new NotImplementedException();
+        return (a == b) ? 4 * a : a + b;
     }
 
     /// <summary>
@@ -59,7 +69,7 @@ public class Warmup1
     /// </summary>
     public int Diff21(int n)
     {
-        throw new NotImplementedException();
+        return (n <= 21) ? (21 - n) : (2 * n - 42);
     }
 
     /// <summary>
@@ -71,7 +81,12 @@ public class Warmup1
     /// </summary>
     public bool ParrotTrouble(bool talking, int hour)
     {
-        throw new NotImplementedException();
+        if ((hour < 7 || hour > 20) && talking)
+        {
+            return true;
+        }
+        return false;
+
     }
 
     /// <summary>
@@ -83,7 +98,7 @@ public class Warmup1
     /// </summary>
     public bool Makes10(int a, int b)
     {
-        throw new NotImplementedException();
+        return a == 10 || b == 10 || a + b == 10;
     }
 
     /// <summary>
@@ -95,7 +110,7 @@ public class Warmup1
     /// </summary>
     public bool NearHundred(int n)
     {
-        throw new NotImplementedException();
+        return Math.Abs(n - 100) <= 10 || Math.Abs(n - 200) <= 10;
     }
 
     /// <summary>
@@ -108,7 +123,7 @@ public class Warmup1
     /// </summary>
     public bool PosNeg(int a, int b, bool negative)
     {
-        throw new NotImplementedException();
+        return !negative && (a < 0 && b > 0 || a > 0 && b < 0) || (a < 0 && b < 0 && negative);
     }
 
     /// <summary>
@@ -121,7 +136,8 @@ public class Warmup1
     /// </summary>
     public string NotString(string str)
     {
-        throw new NotImplementedException();
+        if (str.Length >= 3 && str.Substring(0, 3).Equals("not")) return str;
+        return "not " + str;
     }
 
     /// <summary>
@@ -134,7 +150,7 @@ public class Warmup1
     /// </summary>
     public string MissingChar(string str, int n)
     {
-        throw new NotImplementedException();
+        return str.Remove(n, 1);
     }
 
     /// <summary>
@@ -159,7 +175,8 @@ public class Warmup1
     /// </summary>
     public string Front3(string str)
     {
-        throw new NotImplementedException();
+         String Front3 = (str.Length <= 3) ? str : str.Substring(0, 3);
+        return Front3 + Front3 + Front3;
     }
 
     /// <summary>
@@ -171,7 +188,8 @@ public class Warmup1
     /// </summary>
     public string BackAround(string str)
     {
-        throw new NotImplementedException();
+        String c = str.Substring(str.Length - 1);
+        return c + str + c;
     }
 
     /// <summary>
@@ -197,19 +215,36 @@ public class Warmup1
     /// </summary>
     public string Front22(string str)
     {
-        throw new NotImplementedException();
-    }
+        if (str.Length > 2)
+        {
+            
+    String temp = str.Substring(0, 2);
+            
+    return temp + str + temp;
+            
+  }
+        else
+            
+    return str + str + str;
+        
+}
 
-    /// <summary>
-    /// Given a string, return true if the string starts with "hi" and false otherwise.
-    /// 
-    /// startHi("hi there") → true
-    /// startHi("hi") → true
-    /// startHi("hello hi") → false
-    /// </summary>
-    public bool StartHi(string str)
+
+
+/// <summary>
+/// Given a string, return true if the string starts with "hi" and false otherwise.
+/// 
+/// startHi("hi there") → true
+/// startHi("hi") → true
+/// startHi("hello hi") → false
+/// </summary>
+public bool StartHi(string str)
     {
-        throw new NotImplementedException();
+        if (str.StartsWith("hi"))
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -258,7 +293,7 @@ public class Warmup1
     /// </summary>
     public bool LoneTeen(int a, int b)
     {
-        throw new NotImplementedException();
+        return (a < 13 || a > 19) != (b < 13 || b > 19);
     }
 
     /// <summary>
